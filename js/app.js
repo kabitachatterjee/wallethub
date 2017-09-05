@@ -131,3 +131,42 @@ app.directive('moveFocus', function() {
       }
     };
   });
+
+  app.filter('orderObjectBy', function(){
+ return function(input, attribute) {
+    if (!angular.isObject(input)) return input;
+
+    var array = [];
+    for(var objectKey in input) {
+        array.push(input[objectKey]);
+    }
+
+
+    array.sort(function(a, b){
+        a = parseInt(a[attribute]);
+        b = parseInt(b[attribute]);
+        return a - b;
+    });
+
+    return array;
+ }
+});
+
+app.controller('OrderController', ['$scope', function ($scope) {
+    $scope.orderByAttribute = '';
+
+    $scope.testData = [
+        {name: "Mark", position: "2", age: 33},
+        {name: "Richard", position: "1", age: 29},
+        {name: "Derek", position: "3", age: 35},
+        {name: "Adam", position: "4", age: 30},
+        {name: "Mira", position: "7", age: 33},
+        {name: "Jones", position: "9", age: 29},
+        {name: "Alison", position: "5", age: 35},
+        {name: "Reed", position: "6", age: 30},
+        {name: "April", position: "10", age: 25},
+        {name: "Isobel", position: "8", age: 35},
+        {name: "Alison", position: "12", age: 31},
+        {name: "Alison", position: "13", age: 25}
+	];
+}]);

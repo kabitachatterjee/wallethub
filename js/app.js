@@ -77,17 +77,17 @@ app.controller('SumCtrl', function($scope) {
     }
 });
 
-app.directive("limitTo", [function() {
-    return {
-        restrict: "A",
-        link: function(scope, elem, attrs) {
-            var limit = parseInt(attrs.limitTo);
-            angular.element(elem).on("keypress", function(e) {
-                if (this.value.length == limit) e.preventDefault();
-            });
-        }
-    }
-}]);
+// app.directive("limitTo", [function() {
+//     return {
+//         restrict: "A",
+//         link: function(scope, elem, attrs) {
+//             var limit = parseInt(attrs.limitTo);
+//             angular.element(elem).on("keypress", function(e) {
+//                 if (this.value.length == limit) e.preventDefault();
+//             });
+//         }
+//     }
+// }]);
 
 app.directive('moveFocus', function() {
     function getCaretPosition(elem) {

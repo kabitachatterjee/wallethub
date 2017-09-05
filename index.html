@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="sampleApp">
+<head>
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- angular -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular.js"></script>
+
+  <!-- angular route -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-route.js"></script>
+
+  <!-- custom script (angular app) -->
+  <script type="text/javascript" src="js/app.js"></script>
+
+</head>
+<body>
+  <h1>Angular Test</h1>
+  <div ng-controller="Ctrl">
+
+           <label>5. Enter a telephone number to format:</label>
+          <input type="text" ng-model="phoneNumber" numeric-only><br><br>
+             Result formatted: {{ phoneNumber | tel }}
+      </div>
+  <hr/>
+
+
+  <div ng-controller="CurrencyController">
+    <label for="currency">6. Currency Amount Input:</label>
+  <input type="number" ng-model="amount" aria-label="amount"> <br>
+  Default currency symbol ($): <span id="currency-default">{{amount | currency}}</span><br>
+  Custom currency identifier (USD$): <span id="currency-custom">{{amount | currency:"USD$"}}</span><br>
+  No fractions (0): <span id="currency-no-fractions">{{amount | currency:"USD$":0}}</span>
+</div>
+<hr/>
+<label for="currency">6. Currency Amount Input:</label>
+<input type="text" name="number" ng-model="num_things" numeric-only><br><br>
+Default currency symbol ($): <span id="currency-default">{{num_things | currency}}</span><br><br>
+
+<label>7. Sum of Numbers</label>
+<div ng-controller='SumCtrl'>
+<input type="number" id="txtAmount1" ng-model='txtAmount1' /> +
+    <input type="number" id="txtAmount2" ng-model='txtAmount2' /> +
+    <input type="number" id="txtAmount3" ng-model='txtAmount3' /> =
+    <input type="text" id="txtTotalFx" ng-value="total()"  />
+  </div><br><br>
+<div>
+  <label>8. 5 character input for each box: </label>
+  <input limit-to="5" id="input1" name="input1" tabindex="1" maxlength="5" type="text" class="form-control input-lg"  move-focus placeholder="enter first 5 digits: 09XX"> -
+  <input limit-to="5" id="input2" name="input2" tabindex="2" maxlength="5" type="text" class="form-control input-lg"  move-focus placeholder="enter first 5 digits: 09XX"> -
+  <input limit-to="5" id="input3" name="input3" tabindex="3" maxlength="5" type="text" class="form-control input-lg"  move-focus placeholder="enter first 5 digits: 09XX">
+</div>
+</body>
+</html>

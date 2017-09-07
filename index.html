@@ -40,8 +40,9 @@ Default currency symbol ($): <span id="currency-default">{{num_things | currency
   <input limit-to="5" id="input2" name="input2" tabindex="2" maxlength="5" type="text" move-focus placeholder="enter first 5 characters"> -
   <input limit-to="5" id="input3" name="input3" tabindex="3" maxlength="5" type="text" move-focus placeholder="enter first 5 characters">
 </div><br><br>
-<h3>8. List of people with age and position</h3>
 <div ng-controller="OrderController">
+  <h3>8. List of {{testData.length}} people with age and position</h3>
+  <div>
         <button ng-click="orderByAttribute = 'position'">Order by Position</button>
         <button ng-click="orderByAttribute = 'age'">Order by Age</button>
 
@@ -51,5 +52,6 @@ Default currency symbol ($): <span id="currency-default">{{num_things | currency
             </li>
         </ul>
     </div>
+  </div>
 </body>
 </html>

@@ -24,8 +24,7 @@ app.directive('numericOnly', function(){
 
 // Formatting a numeric input as a phone number
 app.controller('Ctrl', ['$scope', function($scope) {
-  //$scope.phoneNumber = 6503078070;
-}]).filter('tel', function () {
+  }]).filter('tel', function () {
     return function (tel) {
         if (!tel) { return ''; }
 
@@ -67,16 +66,9 @@ app.controller('SumCtrl', function($scope) {
 // Moving cursor between input boxes
 app.directive('moveFocus', function() {
     function getCaretPosition(elem) {
-      // Internet Explorer Caret Position
-      if (document.selection && document.selection.createRange) {
-        var range = document.selection.createRange();
-        var bookmark = range.getBookmark();
-        return bookmark.charCodeAt(2) - 2;
-      }
-
       // Firefox Caret Position
-      return elem.setSelectionRange && elem.selectionStart;
-    }
+       return elem.setSelectionRange && elem.selectionStart;
+     }
 
     return {
       restrict: 'A',
@@ -148,6 +140,40 @@ app.controller('OrderController', ['$scope', function ($scope) {
         {name: "Cindy", position: "11", age: 26},
         {name: "Kat", position: "15", age: 28},
         {name: "Ali", position: "14", age: 33},
-        {name: "Bill", position: "16", age: 26}
+        {name: "Bill", position: "16", age: 26},
+        {name: "John", position: "18", age: 30},
+        {name: "Mary", position: "19", age: 31},
+        {name: "Jack", position: "17", age: 29},
+        {name: "Cristina", position: "20", age: 29},
+        {name: "Chris", position: "23", age: 34},
+        {name: "Preston", position: "21", age: 31},
+        {name: "Riley", position: "22", age: 30},
+        {name: "Jenny", position: "26", age: 26},
+        {name: "Ben", position: "27", age: 27},
+        {name: "Jill", position: "24", age: 24},
+        {name: "Sherry", position: "25", age: 25},
+        {name: "Shirley", position: "28", age: 28},
+        {name: "Milan", position: "30", age: 30},
+        {name: "Justin", position: "29", age: 29},
+        {name: "Mark", position: "32", age: 33},
+        {name: "Richard", position: "31", age: 29},
+        {name: "Derek", position: "33", age: 35},
+        {name: "Adam", position: "34", age: 30},
+        {name: "Mira", position: "37", age: 33},
+        {name: "Jones", position: "39", age: 29},
+        {name: "Alison", position: "35", age: 35},
+        {name: "Reed", position: "36", age: 30},
+        {name: "April", position: "40", age: 25},
+        {name: "Isobel", position: "38", age: 35},
+        {name: "Alison", position: "42", age: 31},
+        {name: "Matt", position: "43", age: 25},
+        {name: "Cindy", position: "41", age: 26},
+        {name: "Kat", position: "45", age: 28},
+        {name: "Ali", position: "44", age: 33},
+        {name: "Bill", position: "46", age: 26},
+        {name: "John", position: "48", age: 30},
+        {name: "Mary", position: "49", age: 31},
+        {name: "Mary Ann", position: "47", age: 32},
+        {name: "Megan", position: "50", age: 27}
 	];
 }]);

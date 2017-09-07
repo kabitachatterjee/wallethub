@@ -23,15 +23,6 @@
       </div>
   <hr/>
 
-
-  <div ng-controller="CurrencyController">
-    <label for="currency">6. Currency Amount Input:</label>
-  <input type="number" ng-model="amount" aria-label="amount"> <br>
-  Default currency symbol ($): <span id="currency-default">{{amount | currency}}</span><br>
-  Custom currency identifier (USD$): <span id="currency-custom">{{amount | currency:"USD$"}}</span><br>
-  No fractions (0): <span id="currency-no-fractions">{{amount | currency:"USD$":0}}</span>
-</div>
-<hr/>
 <label for="currency">6. Currency Amount Input:</label>
 <input type="text" name="number" ng-model="num_things" numeric-only><br><br>
 Default currency symbol ($): <span id="currency-default">{{num_things | currency}}</span><br><br>
@@ -45,9 +36,9 @@ Default currency symbol ($): <span id="currency-default">{{num_things | currency
   </div><br><br>
 <div>
   <label>8. 5 character input for each box: </label>
-  <input limit-to="5" id="input1" name="input1" tabindex="1" maxlength="5" type="text" move-focus placeholder="enter first 5 digits: 09XX"> -
-  <input limit-to="5" id="input2" name="input2" tabindex="2" maxlength="5" type="text" move-focus placeholder="enter first 5 digits: 09XX"> -
-  <input limit-to="5" id="input3" name="input3" tabindex="3" maxlength="5" type="text" move-focus placeholder="enter first 5 digits: 09XX">
+  <input limit-to="5" id="input1" name="input1" tabindex="1" maxlength="5" type="text" move-focus placeholder="enter first 5 characters"> -
+  <input limit-to="5" id="input2" name="input2" tabindex="2" maxlength="5" type="text" move-focus placeholder="enter first 5 characters"> -
+  <input limit-to="5" id="input3" name="input3" tabindex="3" maxlength="5" type="text" move-focus placeholder="enter first 5 characters">
 </div><br><br>
 <h3>8. List of people with age and position</h3>
 <div ng-controller="OrderController">

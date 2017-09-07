@@ -1,7 +1,7 @@
 console.log('app.js is linked');
 var app = angular.module('sampleApp', []);
 
-
+// Directive for accepting only numeric input
 app.directive('numericOnly', function(){
     return {
         require: 'ngModel',
@@ -22,6 +22,7 @@ app.directive('numericOnly', function(){
 }).controller('CurrencyController', ['$scope', function($scope) {
 }]);
 
+// Formatting a numeric input as a phone number
 app.controller('Ctrl', ['$scope', function($scope) {
   //$scope.phoneNumber = 6503078070;
 }]).filter('tel', function () {
@@ -68,6 +69,8 @@ app.controller('Ctrl', ['$scope', function($scope) {
         return (country + " (" + city + ") " + number).trim();
     };
 });
+
+// Summing 3 inputs
 app.controller('SumCtrl', function($scope) {
 
     $scope.total = function() {
@@ -77,18 +80,8 @@ app.controller('SumCtrl', function($scope) {
     }
 });
 
-// app.directive("limitTo", [function() {
-//     return {
-//         restrict: "A",
-//         link: function(scope, elem, attrs) {
-//             var limit = parseInt(attrs.limitTo);
-//             angular.element(elem).on("keypress", function(e) {
-//                 if (this.value.length == limit) e.preventDefault();
-//             });
-//         }
-//     }
-// }]);
 
+// Moving cursor between input boxes
 app.directive('moveFocus', function() {
     function getCaretPosition(elem) {
       // Internet Explorer Caret Position
@@ -132,7 +125,8 @@ app.directive('moveFocus', function() {
     };
   });
 
-  app.filter('orderObjectBy', function(){
+//Ordering an array of objects by 2 properties- age and position
+app.filter('orderObjectBy', function(){
  return function(input, attribute) {
     if (!angular.isObject(input)) return input;
 
@@ -167,6 +161,10 @@ app.controller('OrderController', ['$scope', function ($scope) {
         {name: "April", position: "10", age: 25},
         {name: "Isobel", position: "8", age: 35},
         {name: "Alison", position: "12", age: 31},
-        {name: "Alison", position: "13", age: 25}
+        {name: "Matt", position: "13", age: 25},
+        {name: "Cindy", position: "11", age: 26},
+        {name: "Kat", position: "15", age: 28},
+        {name: "Ali", position: "14", age: 33},
+        {name: "Bill", position: "16", age: 26}
 	];
 }]);

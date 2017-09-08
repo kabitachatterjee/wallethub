@@ -71,7 +71,6 @@ app.directive('moveFocus', function() {
      }
 
     return {
-      restrict: 'A',
       link: function(scope, elem, attr) {
         var tabindex = parseInt(attr.tabindex);
         var maxlength = parseInt(attr.maxlength);
